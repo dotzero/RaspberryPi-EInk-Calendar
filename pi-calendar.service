@@ -1,0 +1,16 @@
+# sudo cp pi-calendar.service /lib/systemd/system/pi-calendar.service
+# sudo chmod 644 /lib/systemd/system/pi-calendar.service
+# sudo systemctl daemon-reload
+# sudo systemctl enable pi-calendar.service
+# sudo reboot
+
+[Unit]
+Description=RaspberryPi E Ink Calendar
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /home/pi/RaspberryPi-EInk-Calendar/main.py > /var/log/pi-calendar.log 2>&1
+
+[Install]
+WantedBy=multi-user.target
