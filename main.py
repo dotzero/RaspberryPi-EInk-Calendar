@@ -9,6 +9,7 @@ import textwrap
 import traceback
 from datetime import timedelta
 from exchangelib import DELEGATE, Account, Credentials, Configuration, EWSDateTime, EWSTimeZone
+from exchangelib.errors import UnauthorizedError
 from PIL import Image, ImageDraw, ImageFont
 
 humanize.i18n.activate("ru_RU")
@@ -33,6 +34,9 @@ def main():
                 epd.display(epd.getbuffer(image.rotate(180)))
 
             time.sleep(5 * 60)
+        except UnauthorizedError as err:
+            print("UnauthorizedError: {0}".format(err))
+            return
         except (KeyboardInterrupt, SystemExit):
             return
         except:
