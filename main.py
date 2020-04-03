@@ -32,7 +32,9 @@ def main():
                 # image.save("image.png", "PNG")
                 epd.display(epd.getbuffer(image.rotate(180)))
 
-            time.sleep(10 * 60)
+            time.sleep(5 * 60)
+        except (KeyboardInterrupt, SystemExit):
+            return
         except:
             print('traceback.format_exc():\n%s', traceback.format_exc())
             time.sleep(60)
@@ -79,6 +81,9 @@ def next_meeting():
     now = tz.localize(EWSDateTime.now())
 
     items = account.calendar.view(start=now, end=now + timedelta(days=1))
+    if len(items) == 0:
+        return ("", "", "     ~(^-^)~")
+
     item = items[0]
     start = item.start.astimezone(tz)
 
