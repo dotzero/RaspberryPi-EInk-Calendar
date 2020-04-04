@@ -13,7 +13,7 @@ sudo raspi-config
 
 ```
 sudo apt-get update
-sudo apt-get install python3-pip python3-pil python3-numpy
+sudo apt-get install python3-pip python3-pil python3-numpy fonts-hack-ttf
 git clone https://github.com/dotzero/RaspberryPi-EInk-Calendar.git
 cd RaspberryPi-EInk-Calendar
 sudo pip3 install -r requirements.txt
