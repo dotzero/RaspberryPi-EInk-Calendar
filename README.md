@@ -2,14 +2,18 @@
 
 ![RaspberryPi EInk Calendar](preview.jpg)
 
-# Подготовка
+* https://dotzero.blog/raspberry-pi-eink/
+* https://www.raspberrypi.org/products/raspberry-pi-zero-w/
+* https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT
+
+## Подготовка
 
 ```bash
 sudo raspi-config
 # Choose Interfacing Options -> SPI -> Yes  to enable SPI interface
 ```
 
-# Установка
+## Установка
 
 ```
 sudo apt-get update
@@ -19,14 +23,14 @@ cd RaspberryPi-EInk-Calendar
 sudo pip3 install -r requirements.txt
 ```
 
-# Настройка доступов
+## Настройка доступов
 
 ```
 cp settings_example.py settings.py
 nano settings.py
 ```
 
-# Настройка автоматического запуска
+## Настройка автоматического запуска
 
 ```bash
 sudo cp pi-calendar.service /lib/systemd/system/pi-calendar.service
@@ -35,3 +39,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable pi-calendar.service
 sudo reboot
 ```
+
+## Лицензия
+
+Проект доступен на условиях лицензии MIT: http://www.opensource.org/licenses/mit-license.php
