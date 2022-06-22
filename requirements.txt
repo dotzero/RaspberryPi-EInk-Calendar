@@ -7,7 +7,7 @@ humanize==1.0.0
 ipaddress==1.0.17
 keyring==17.1.1
 keyrings.alt==3.1.1
-numpy==1.16.2
+numpy==1.22.0
 olefile==0.46
 Pillow==5.4.1
 pycrypto==2.6.1
